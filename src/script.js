@@ -70,9 +70,11 @@ const torus = new THREE.Mesh(
 )
 torus.position.x = 1.5
 
+const planeMaterial = new THREE.MeshPhongMaterial({color: 0xffffff})
+planeMaterial.side = THREE.DoubleSide;
 const plane = new THREE.Mesh(
-    new THREE.PlaneGeometry(5, 5),
-    material
+    new THREE.PlaneGeometry(8, 8),
+    planeMaterial
 )
 plane.rotation.x = - Math.PI * 0.5
 plane.position.y = - 0.65
