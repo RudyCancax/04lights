@@ -51,6 +51,7 @@ scene.add(spotLH)
 // Material
 const material = new THREE.MeshStandardMaterial()
 material.roughness = 0.4
+material.side = THREE.DoubleSide;
 
 // Objects
 const sphere = new THREE.Mesh(
@@ -70,11 +71,10 @@ const torus = new THREE.Mesh(
 )
 torus.position.x = 1.5
 
-const planeMaterial = new THREE.MeshPhongMaterial({color: 0xffffff})
-planeMaterial.side = THREE.DoubleSide;
+
 const plane = new THREE.Mesh(
     new THREE.PlaneGeometry(8, 8),
-    planeMaterial
+    material
 )
 plane.rotation.x = - Math.PI * 0.5
 plane.position.y = - 0.65
